@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>栄町一丁目開発計画に関する客観的情報</title>
     <style>
-        /* 元のHPのスタイルを継承し、ご指示の修正を反映 */
+        /* 元のHPのスタイルを継承し、最新の戦術的修正を反映 */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
@@ -49,7 +49,7 @@
             margin-bottom: 20px;
         }
 
-        /* スクリーンショットの「住民説明会について」のスタイルを継承 */
+        /* 現況セクションのスタイル */
         .status-box {
             background-color: #f8f9fa;
             padding: 15px;
@@ -66,20 +66,19 @@
             margin-bottom: 0;
         }
 
-        /* 現況の見出し：ボールド・黒・サイズ拡大 */
+        /* 項目ラベル：ボールド・黒・視認性強化 */
         .status-label {
             display: block;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             color: #000;
-            font-weight: 900;
-            margin-bottom: 6px;
-            letter-spacing: 0.02em;
+            font-weight: bold;
+            margin-bottom: 4px;
         }
 
-        /* 画像グリッド：サムネイルをさらに小型化 */
+        /* 画像グリッド：サムネイルを極小化 */
         .image-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); 
+            grid-template-columns: repeat(5, 1fr); /* 5カラムで極小化 */
             gap: 6px;
             margin-top: 15px;
         }
@@ -113,7 +112,7 @@
             text-overflow: ellipsis;
         }
 
-        /* 特徴的な画像（現状写真）は1枚で大きく見せる */
+        /* 現状写真は大きく強調 */
         .featured-card {
             grid-column: 1 / -1;
             margin-bottom: 5px;
@@ -126,8 +125,8 @@
         }
 
         .featured-card .image-label {
-            font-size: 0.7rem;
-            padding: 6px;
+            font-size: 0.75rem;
+            padding: 8px;
             white-space: normal;
         }
 
@@ -187,10 +186,10 @@
         /* スマホ最適化 */
         @media (max-width: 480px) {
             body { padding: 15px 10px; }
-            h1 { font-size: 1.1rem; }
-            .image-grid { grid-template-columns: repeat(3, 1fr); }
+            h1 { font-size: 1.15rem; }
+            .image-grid { grid-template-columns: repeat(4, 1fr); } /* スマホは4列 */
             .featured-card { grid-column: 1 / -1; }
-            .status-label { font-size: 1rem; }
+            .status-box { padding: 12px; }
         }
     </style>
 </head>
@@ -208,7 +207,7 @@
         </div>
     </section>
 
-    <!-- 現況：ご指示に基づき見出しをボールド黒・大型化 -->
+    <!-- 現況：項目見出しをボールド黒に修正 -->
     <section>
         <h3 class="section-title">■現況（2026年5月11日時点）</h3>
         <p style="font-size: 0.9rem; color: #444;">現地状況および行政への照会結果は以下の通りです。</p>
@@ -232,14 +231,15 @@
         </div>
     </section>
 
-    <!-- 公的情報の確認（リンク修正済み） -->
+    <!-- 公的情報の確認（リンク訂正済み） -->
     <section>
         <h3 class="section-title">■公的情報の確認</h3>
+        <p style="font-size: 0.85rem; margin-bottom: 10px; color: #444;">情報の正確性については、以下の公的窓口にて確認が可能です。</p>
         <div class="status-box" style="background-color: #fff; border: 1px dashed #ced4da;">
             <div class="status-item">
                 <span class="status-label" style="font-size: 0.85rem;">特定開発事業の進行状況（草加市公式HP）</span>
                 <a href="https://www.city.soka.saitama.jp/cont/s1803/010/010/010/index.html" target="_blank" class="text-link">進行状況公開ページはこちら</a>
-                <p style="font-size: 0.7rem; color: #666; margin-top: 3px;">※受理からHP反映まで数日のタイムラグが生じる場合があります。</p>
+                <p style="font-size: 0.75rem; color: #666; margin-top: 3px;">※受理からHP反映まで数日のタイムラグが生じる場合があります。</p>
             </div>
             <div class="status-item">
                 <span class="status-label" style="font-size: 0.85rem;">手続に関する確認先</span>
@@ -273,10 +273,10 @@
                 <img src="infoboard-removed.webp" alt="標識撤去後の現状">
                 <div class="image-label">撤去後の現状（2026年5月11日撮影）</div>
             </div>
-            <!-- 極小サムネイル（アーカイブ） -->
+            <!-- アーカイブサムネイル（極小） -->
             <div class="image-card" onclick="openModal('infoboard.webp')">
                 <img src="infoboard.webp" alt="標識の全景">
-                <div class="image-label">標識の全景</div>
+                <div class="image-label">全景</div>
             </div>
             <div class="image-card" onclick="openModal('infoboard-status.webp')">
                 <img src="infoboard-status.webp" alt="標識の記載内容">
@@ -284,11 +284,11 @@
             </div>
             <div class="image-card" onclick="openModal('infoboard-context-a.webp')">
                 <img src="infoboard-context-a.webp" alt="周辺状況A">
-                <div class="image-label">周辺状況A</div>
+                <div class="image-label">周辺A</div>
             </div>
             <div class="image-card" onclick="openModal('infoboard-context-b.webp')">
                 <img src="infoboard-context-b.webp" alt="周辺状況B">
-                <div class="image-label">周辺状況B</div>
+                <div class="image-label">周辺B</div>
             </div>
         </div>
     </section>
@@ -327,6 +327,7 @@
         </table>
     </section>
 
+    <!-- フッター・免責事項（改変なし） -->
     <footer>
         <div style="margin-bottom: 20px; line-height: 1.6;">
             <strong>免責事項</strong><br>
