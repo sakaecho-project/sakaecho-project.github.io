@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>草加市栄町一丁目 開発計画（旧福野段ボール跡地）の記録</title>
     <style>
-        /* 全体：ライトグレーの背景とフォントサイズの最適化 */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 18px; /* 現HPのスケールに合わせ拡大 */
+            font-size: 18px;
             line-height: 1.7;
             color: #333;
             max-width: 640px;
             margin: 0 auto;
             padding: 25px 15px;
-            background-color: #f0f2f5; /* ライトグレーの背景 */
+            background-color: #f0f2f5;
         }
 
         header {
@@ -32,7 +31,6 @@
             line-height: 1.4;
         }
 
-        /* セクション：白いテキストボックス（カード形式） */
         section {
             background-color: #ffffff;
             margin-bottom: 30px;
@@ -51,12 +49,10 @@
             color: #000;
         }
 
-        /* 導入文 */
         .intro-text {
             color: #444;
         }
 
-        /* 現況・公的情報の詳細スタイル */
         .status-item {
             margin-bottom: 25px;
         }
@@ -65,7 +61,6 @@
             margin-bottom: 0;
         }
 
-        /* 項目見出し：ボールド・黒 */
         .status-label {
             display: block;
             font-size: 1.1rem;
@@ -74,7 +69,6 @@
             margin-bottom: 6px;
         }
 
-        /* 画像グリッド：撤去画像を2倍サイズの正方形に */
         .image-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -99,7 +93,6 @@
             display: block;
         }
 
-        /* 撤去後の現状：2x2サイズ正方形 */
         .featured-card {
             grid-column: span 2;
             grid-row: span 2;
@@ -120,7 +113,6 @@
             font-weight: bold;
         }
 
-        /* 確認項目リスト */
         .check-list {
             padding-left: 20px;
             margin: 0;
@@ -132,7 +124,6 @@
             margin-bottom: 12px;
         }
 
-        /* データテーブル */
         .data-table {
             width: 100%;
             border-collapse: collapse;
@@ -153,13 +144,11 @@
             color: #666;
         }
 
-        /* リンク */
         .text-link {
             color: #0056b3;
             text-decoration: underline;
         }
 
-        /* フッター・免責事項 */
         footer {
             margin-top: 60px;
             padding: 0 10px 40px 10px;
@@ -185,7 +174,6 @@
             margin-top: 20px;
         }
 
-        /* モーダル */
         #image-modal {
             display: none;
             position: fixed;
@@ -203,7 +191,6 @@
             object-fit: contain;
         }
 
-        /* スマホ最適化 */
         @media (max-width: 480px) {
             body { font-size: 16.5px; }
             section { padding: 20px; }
@@ -217,7 +204,6 @@
         <h1>草加市栄町一丁目 開発計画（旧福野段ボール跡地）の記録</h1>
     </header>
 
-    <!-- 導入文 -->
     <section>
         <div class="intro-text">
             <p>草加市栄町一丁目の<a href="https://www.google.com/maps/search/?api=1&query=埼玉県草加市栄町1丁目+旧福野段ボール工業" target="_blank" class="text-link">旧福野段ボール工業跡地</a>において開発計画の標識が設置されました。</p>
@@ -225,7 +211,6 @@
         </div>
     </section>
 
-    <!-- 現況 -->
     <section>
         <h3 class="section-title">■現況（2026年5月11日時点）</h3>
         <p style="font-size: 0.95rem; color: #666; margin-bottom: 20px;">現地状況および行政への照会結果は以下の通りです。</p>
@@ -247,7 +232,6 @@
         </div>
     </section>
 
-    <!-- 公的情報の確認 -->
     <section>
         <h3 class="section-title">■公的情報の確認</h3>
         <p style="font-size: 0.95rem; margin-bottom: 15px; color: #666;">情報の正確性については、以下の公的窓口にて確認が可能です。</p>
@@ -263,7 +247,6 @@
         </div>
     </section>
 
-    <!-- 一般的な確認項目 -->
     <section>
         <h3 class="section-title">■一般的な確認項目</h3>
         <p style="margin-bottom: 15px; color: #444;">
@@ -278,17 +261,14 @@
         </ul>
     </section>
 
-    <!-- 標識の設置状況（キャプション入れ替え済み） -->
     <section id="signage">
         <h3 class="section-title">■標識の設置状況</h3>
-        <p style="margin-bottom: 15px; color: #444;">5月11日、全標識の取り外しを確認。現在、現地に案内等は存在しません。</p>
+        <p style="margin-bottom: 15px; color: #444;">現在、現地に案内等は存在しません。</p>
         <div class="image-grid">
-            <!-- 撤去後の現状 -->
             <div class="image-card featured-card" onclick="openModal('infoboard-removed.webp')">
                 <img src="infoboard-removed.webp" alt="標識撤去後の現状">
                 <div class="image-label">撤去後の現状（2026/05/11撮影）</div>
             </div>
-            <!-- アーカイブサムネイル -->
             <div class="image-card" onclick="openModal('infoboard.webp')">
                 <img src="infoboard.webp" alt="標識の記載内容">
                 <div class="image-label">記載内容</div>
@@ -308,7 +288,6 @@
         </div>
     </section>
 
-    <!-- 記録保存 -->
     <section>
         <h3 class="section-title">■（アーカイブ）撤去前の記載内容</h3>
         <p style="font-size: 0.9rem; color: #888; margin-bottom: 15px;">
@@ -342,7 +321,6 @@
         </table>
     </section>
 
-    <!-- フッター・免責事項（強化版） -->
     <footer>
         <div class="disclaimer-box">
             <strong>免責事項および運営方針</strong><br>
@@ -357,7 +335,6 @@
         <div class="signature">2026年5月 周辺住民有志</div>
     </footer>
 
-    <!-- 画像拡大用モーダル -->
     <div id="image-modal" onclick="closeModal()">
         <img id="modal-img" src="" alt="拡大画像">
     </div>
