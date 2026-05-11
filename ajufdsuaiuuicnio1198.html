@@ -5,60 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>栄町一丁目開発計画に関する客観的情報</title>
     <style>
-        /* 元のHPのスタイルを継承し、最新の戦術的修正を反映 */
+        /* 全体：ライトグレーの背景とシステムフォント */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 600px;
+            max-width: 640px;
             margin: 0 auto;
-            padding: 20px 15px;
-            background-color: #ffffff;
+            padding: 20px 10px;
+            background-color: #f0f2f5; /* ライトグレーの背景 */
         }
 
         header {
-            border-bottom: 2px solid #1a1a1a;
             margin-bottom: 20px;
-            padding-bottom: 10px;
+            padding: 0 10px;
         }
 
         h1 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             margin: 0;
             font-weight: bold;
+            color: #1a1a1a;
+            border-bottom: 2px solid #1a1a1a;
+            padding-bottom: 8px;
         }
 
+        /* 各セクションを白いテキストボックス（カード）として定義 */
         section {
-            margin-bottom: 40px;
+            background-color: #ffffff; /* テキストボックスは白 */
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid #e1e4e8;
         }
 
         .section-title {
             font-size: 1rem;
-            border-left: 4px solid #1a1a1a;
-            padding-left: 10px;
+            border-left: 5px solid #1a1a1a;
+            padding-left: 12px;
             margin-bottom: 15px;
             font-weight: bold;
+            color: #000;
         }
 
-        /* 導入文スタイル */
+        /* 導入文 */
         .intro-text {
             font-size: 0.9rem;
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 4px;
-            margin-bottom: 20px;
+            color: #444;
         }
 
-        /* 現況セクションのスタイル */
-        .status-box {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 4px;
-            margin-top: 15px;
-        }
-
+        /* 現況・公的情報のボックス内スタイル */
         .status-item {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             font-size: 0.9rem;
         }
 
@@ -66,27 +65,27 @@
             margin-bottom: 0;
         }
 
-        /* 項目ラベル：ボールド・黒・視認性強化 */
+        /* 項目見出し：ボールド・黒 */
         .status-label {
             display: block;
             font-size: 0.95rem;
             color: #000;
             font-weight: bold;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
 
-        /* 画像グリッド：サムネイルを極小化 */
+        /* 画像グリッド：撤去画像を2倍サイズの正方形に */
         .image-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr); /* 5カラムで極小化 */
-            gap: 6px;
+            grid-template-columns: repeat(4, 1fr); /* 4列構成 */
+            gap: 8px;
             margin-top: 15px;
         }
 
         .image-card {
             cursor: pointer;
             border: 1px solid #eee;
-            border-radius: 2px;
+            border-radius: 4px;
             overflow: hidden;
             background-color: #fff;
             display: flex;
@@ -95,42 +94,44 @@
 
         .image-card img {
             width: 100%;
-            aspect-ratio: 1 / 1;
+            aspect-ratio: 1 / 1; /* すべて正方形 */
             object-fit: cover;
             display: block;
         }
 
+        /* 撤去後の現状：2x2サイズ */
+        .featured-card {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
         .image-label {
-            font-size: 0.5rem;
-            padding: 2px 1px;
+            font-size: 0.6rem;
+            padding: 4px 2px;
             color: #777;
             text-align: center;
             border-top: 1px solid #eee;
             background-color: #fafafa;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        /* 現状写真は大きく強調 */
-        .featured-card {
-            grid-column: 1 / -1;
-            margin-bottom: 5px;
-        }
-
-        .featured-card img {
-            height: auto;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
         }
 
         .featured-card .image-label {
             font-size: 0.75rem;
-            padding: 8px;
-            white-space: normal;
+            padding: 6px;
         }
 
-        /* テーブルスタイル */
+        /* 確認項目リスト */
+        .check-list {
+            padding-left: 20px;
+            margin: 0;
+            font-size: 0.85rem;
+            color: #444;
+        }
+
+        .check-list li {
+            margin-bottom: 8px;
+        }
+
+        /* データテーブル */
         .data-table {
             width: 100%;
             border-collapse: collapse;
@@ -145,9 +146,10 @@
         }
 
         .data-table th {
-            background-color: #f1f3f5;
+            background-color: #f8f9fa;
             width: 35%;
             font-weight: normal;
+            color: #666;
         }
 
         /* リンク */
@@ -158,11 +160,11 @@
 
         /* フッター */
         footer {
-            margin-top: 60px;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
+            margin-top: 40px;
+            padding: 20px 10px;
             font-size: 0.75rem;
-            color: #6c757d;
+            color: #777;
+            text-align: left;
         }
 
         /* モーダル */
@@ -185,11 +187,9 @@
 
         /* スマホ最適化 */
         @media (max-width: 480px) {
-            body { padding: 15px 10px; }
-            h1 { font-size: 1.15rem; }
-            .image-grid { grid-template-columns: repeat(4, 1fr); } /* スマホは4列 */
-            .featured-card { grid-column: 1 / -1; }
-            .status-box { padding: 12px; }
+            section { padding: 15px; }
+            .image-grid { grid-template-columns: repeat(4, 1fr); }
+            .data-table th { width: 40%; }
         }
     </style>
 </head>
@@ -199,7 +199,7 @@
         <h1>栄町一丁目開発計画に関する客観的情報</h1>
     </header>
 
-    <!-- 導入文（地図リンク埋め込み・内容改変なし） -->
+    <!-- 導入文 -->
     <section>
         <div class="intro-text">
             <p>草加市栄町一丁目の<a href="https://www.google.com/maps/search/?api=1&query=埼玉県草加市栄町1丁目+旧福野段ボール工業" target="_blank" class="text-link">旧福野段ボール工業跡地</a>において開発計画の標識が設置されました。</p>
@@ -207,71 +207,68 @@
         </div>
     </section>
 
-    <!-- 現況：項目見出しをボールド黒に修正 -->
+    <!-- 現況 -->
     <section>
         <h3 class="section-title">■現況（2026年5月11日時点）</h3>
-        <p style="font-size: 0.9rem; color: #444;">現地状況および行政への照会結果は以下の通りです。</p>
-        <div class="status-box">
-            <div class="status-item">
-                <span class="status-label">標識（看板）の撤去</span>
-                5月11日、設置されていた全3箇所の標識が撤去されました。撤去後の現地において、中止や延期を知らせる周知文等の掲示は行われていません。
-            </div>
-            <div class="status-item">
-                <span class="status-label">住民説明会（5/13予定分）</span>
-                実施されません。市条例に基づく必須手続が未完了であり、標識の撤去により公式な案内も消滅しています。
-            </div>
-            <div class="status-item">
-                <span class="status-label">行政の対応</span>
-                不適切な標識掲示および周知不徹底に対し、市より事業者へ是正指示が行われたことが確認されています。
-            </div>
-            <div class="status-item">
-                <span class="status-label">手続の受理状況</span>
-                5月11日現在、草加市において本計画の「特定開発事業構想届出書」は受理されておりません。
-            </div>
+        <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">現地状況および行政への照会結果は以下の通りです。</p>
+        <div class="status-item">
+            <span class="status-label">標識（看板）の撤去</span>
+            5月11日、設置されていた全3箇所の標識が<a href="#signage" class="text-link">撤去</a>されました。撤去後の現地において、中止や延期を知らせる周知文等の掲示は行われていません。
+        </div>
+        <div class="status-item">
+            <span class="status-label">住民説明会（5/13予定分）</span>
+            実施されません。市条例に基づく必須手続が未完了であり、標識の撤去により公式な案内も消滅しています。
+        </div>
+        <div class="status-item">
+            <span class="status-label">行政の対応</span>
+            不適切な標識掲示および周知不徹底に対し、市より事業者へ是正指示が行われたことが確認されています。
+        </div>
+        <div class="status-item">
+            <span class="status-label">手続の受理状況</span>
+            5月11日現在、草加市において本計画の「特定開発事業構想届出書」は受理されておりません。
         </div>
     </section>
 
-    <!-- 公的情報の確認（リンク訂正済み） -->
+    <!-- 公的情報の確認 -->
     <section>
         <h3 class="section-title">■公的情報の確認</h3>
-        <p style="font-size: 0.85rem; margin-bottom: 10px; color: #444;">情報の正確性については、以下の公的窓口にて確認が可能です。</p>
-        <div class="status-box" style="background-color: #fff; border: 1px dashed #ced4da;">
-            <div class="status-item">
-                <span class="status-label" style="font-size: 0.85rem;">特定開発事業の進行状況（草加市公式HP）</span>
-                <a href="https://www.city.soka.saitama.jp/cont/s1803/010/010/010/index.html" target="_blank" class="text-link">進行状況公開ページはこちら</a>
-                <p style="font-size: 0.75rem; color: #666; margin-top: 3px;">※受理からHP反映まで数日のタイムラグが生じる場合があります。</p>
-            </div>
-            <div class="status-item">
-                <span class="status-label" style="font-size: 0.85rem;">手続に関する確認先</span>
-                <a href="https://www.city.soka.saitama.jp/mailform/otoiawase/SITE000000000000000048.html" target="_blank" class="text-link">草加市 開発審査課（お問い合わせフォーム）</a><br>
-                電話：<a href="tel:0489221927" class="text-link">048-922-1927</a>（直通）
-            </div>
+        <p style="font-size: 0.85rem; margin-bottom: 12px; color: #666;">情報の正確性については、以下の公的窓口にて確認が可能です。</p>
+        <div class="status-item">
+            <span class="status-label">特定開発事業の進行状況（草加市公式HP）</span>
+            <a href="https://www.city.soka.saitama.jp/cont/s1803/010/010/010/index.html" target="_blank" class="text-link">進行状況公開ページはこちら</a>
+            <p style="font-size: 0.75rem; color: #888; margin-top: 3px;">※受理からHP反映まで数日のタイムラグが生じる場合があります。</p>
+        </div>
+        <div class="status-item">
+            <span class="status-label">手続に関する確認先</span>
+            <a href="https://www.city.soka.saitama.jp/mailform/otoiawase/SITE000000000000000048.html" target="_blank" class="text-link">草加市 開発審査課（お問い合わせフォーム）</a><br>
+            電話：<a href="tel:0489221927" class="text-link">048-922-1927</a>（直通）
         </div>
     </section>
 
-    <!-- 一般的な確認項目（改変なし） -->
+    <!-- 一般的な確認項目（内容更新） -->
     <section>
         <h3 class="section-title">■一般的な確認項目</h3>
-        <p style="font-size: 0.85rem; color: #444; margin-bottom: 10px;">
-            大規模な開発工事においては、一般的に以下のような項目が住民説明会や計画段階で検討対象となります。
+        <p style="font-size: 0.85rem; color: #444; margin-bottom: 12px;">
+            大規模な開発事業においては、行政手続や周辺環境への配慮として、一般的に以下の項目が住民説明や審査の対象となります。
         </p>
-        <ul style="font-size: 0.85rem; color: #444; padding-left: 20px;">
-            <li>工事車両の通行ルートおよび交通安全対策</li>
-            <li>騒音・振動および粉じんへの対策状況</li>
-            <li>建築物の高さによる日影・電波障害の影響</li>
-            <li>周辺生活環境（プライバシー等）への配慮</li>
+        <ul class="check-list">
+            <li>開発許可および事前協議の実施状況</li>
+            <li>土壌調査、地盤調査の実施状況とその結果</li>
+            <li>周辺環境（日照、電波、音響等）への影響評価</li>
+            <li>都市計画および用途地域との適合</li>
+            <li>関連条例および要領への適合状況</li>
         </ul>
     </section>
 
-    <!-- 標識の設置状況：超小型サムネイル -->
+    <!-- 標識の設置状況：撤去画像を2倍正方形に -->
     <section id="signage">
         <h3 class="section-title">■標識の設置状況</h3>
         <p style="font-size: 0.85rem; color: #444;">5月11日、全標識の取り外しを確認。現在、現地に案内等は存在しません。</p>
         <div class="image-grid">
-            <!-- 撤去後の現状（強調表示） -->
+            <!-- 撤去後の現状（2倍サイズ正方形） -->
             <div class="image-card featured-card" onclick="openModal('infoboard-removed.webp')">
                 <img src="infoboard-removed.webp" alt="標識撤去後の現状">
-                <div class="image-label">撤去後の現状（2026年5月11日撮影）</div>
+                <div class="image-label">撤去後の現状（2026/05/11撮影）</div>
             </div>
             <!-- アーカイブサムネイル（極小） -->
             <div class="image-card" onclick="openModal('infoboard.webp')">
@@ -293,10 +290,10 @@
         </div>
     </section>
 
-    <!-- 記録保存：事業者名を実名化 -->
+    <!-- 記録保存：実名反映 -->
     <section>
         <h3 class="section-title">■（アーカイブ）撤去前の記載内容</h3>
-        <p style="font-size: 0.8rem; color: #6c757d; margin-bottom: 10px;">
+        <p style="font-size: 0.8rem; color: #888; margin-bottom: 10px;">
             5月10日まで現地に掲示されていた標識に基づくデータです。事実の記録保存のため掲載します。
         </p>
         <table class="data-table">
@@ -327,13 +324,13 @@
         </table>
     </section>
 
-    <!-- フッター・免責事項（改変なし） -->
+    <!-- フッター・免責事項 -->
     <footer>
-        <div style="margin-bottom: 20px; line-height: 1.6;">
+        <div style="margin-bottom: 20px; line-height: 1.6; color: #888;">
             <strong>免責事項</strong><br>
             本サイトに掲載されている情報は、現地標識および公的機関の公開情報に基づき個人的に整理したものであり、その正確性、完全性、最新性を保証するものではありません。情報の利用により生じた損害等について、作成者は一切の責任を負いません。最新の正確な情報については、必ず事業者または草加市役所等の公的窓口へ直接ご確認ください。
         </div>
-        <p style="text-align: center;">&copy; 2026 栄町一丁目開発計画に関する情報有志</p>
+        <p style="text-align: left;">&copy; 2026 栄町一丁目開発計画に関する情報有志</p>
     </footer>
 
     <!-- 画像拡大用モーダル -->
