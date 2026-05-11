@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>栄町一丁目開発計画に関する客観的情報</title>
     <style>
-        /* 元のHPのスタイルを完全継承 */
+        /* 元のHPのスタイルとテイストを完全継承 */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
@@ -49,36 +49,32 @@
             margin-bottom: 20px;
         }
 
-        /* 「現況」：元の「住民説明会について」のスタイルを継承 */
-        .status-details {
-            margin-top: 15px;
+        /* スクリーンショットの「住民説明会について」のスタイルを継承 */
+        .status-box {
             background-color: #f8f9fa;
             padding: 15px;
             border-radius: 4px;
+            margin-top: 15px;
         }
 
-        .detail-item {
-            margin-bottom: 12px;
+        .status-item {
+            margin-bottom: 15px;
             font-size: 0.9rem;
         }
 
-        .detail-item:last-child {
+        .status-item:last-child {
             margin-bottom: 0;
         }
 
-        .detail-label {
+        .status-label {
             display: block;
             font-size: 0.75rem;
             color: #6c757d;
             font-weight: bold;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
-        .status-content {
-            font-size: 0.9rem;
-        }
-
-        /* 画像グリッド：元のサムネスタイルを継承 */
+        /* 画像グリッド：元の小さな正方形サムネスタイルを継承 */
         .image-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -91,36 +87,35 @@
             border: 1px solid #eee;
             border-radius: 4px;
             overflow: hidden;
-            transition: transform 0.2s;
             background-color: #fff;
-        }
-
-        .image-card:hover {
-            transform: scale(1.02);
         }
 
         .image-card img {
             width: 100%;
-            height: 120px;
-            object-fit: cover;
+            height: 140px;
+            object-fit: cover; /* 正方形に近い表示を維持 */
             display: block;
         }
 
         .image-label {
             font-size: 0.7rem;
-            padding: 5px 8px;
-            background-color: #fff;
+            padding: 5px;
             color: #666;
             text-align: center;
+            border-top: 1px solid #eee;
+            background-color: #fafafa;
         }
 
-        .full-width-card {
+        /* 撤去後の画像を強調表示 */
+        .featured-card {
             grid-column: 1 / -1;
         }
 
-        .full-width-card img {
+        .featured-card img {
             height: auto;
-            max-height: 300px;
+            max-height: 250px;
+            object-fit: contain;
+            background-color: #f0f0f0;
         }
 
         /* テーブルスタイル */
@@ -176,8 +171,13 @@
             object-fit: contain;
         }
 
+        /* スマホ最適化（2列維持しつつフォントサイズ調整） */
         @media (max-width: 480px) {
-            .image-grid { grid-template-columns: 1fr; }
+            body { padding: 15px 10px; }
+            h1 { font-size: 1.15rem; }
+            .image-card img { height: 120px; }
+            .data-table th { width: 40%; }
+            .status-box { padding: 12px; }
         }
     </style>
 </head>
@@ -187,7 +187,7 @@
         <h1>栄町一丁目開発計画に関する客観的情報</h1>
     </header>
 
-    <!-- 導入文（改変なし） -->
+    <!-- 導入文（地図リンク埋め込み・内容改変なし） -->
     <section>
         <div class="intro-text">
             <p>草加市栄町一丁目の<a href="https://www.google.com/maps/search/?api=1&query=埼玉県草加市栄町1丁目+旧福野段ボール工業" target="_blank" class="text-link">旧福野段ボール工業跡地</a>において開発計画の標識が設置されました。</p>
@@ -195,44 +195,42 @@
         </div>
     </section>
 
-    <!-- 現況：住民説明会についてのスタイルを継承 -->
+    <!-- 現況：元の「住民説明会について」のスタイルを完全継承 -->
     <section>
         <h3 class="section-title">■現況（2026年5月11日時点）</h3>
-        <div class="status-content">
-            <p>現地状況および行政への照会結果は以下の通りです。</p>
-            <div class="status-details">
-                <div class="detail-item">
-                    <span class="detail-label">標識（看板）の撤去</span>
-                    5月11日、設置されていた全3箇所の標識が撤去されました。撤去後の現地において、中止や延期を知らせる周知文等の掲示は行われていません。
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">住民説明会の中止</span>
-                    5/13に予定されていた説明会は実施されません。市条例に基づく必須手続が未完了であり、標識の撤去により公式な案内も消滅しています。
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">行政の対応</span>
-                    不適切な標識掲示および周知不徹底に対し、市より事業者へ是正指示が行われたことが確認されています。
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">手続の受理状況</span>
-                    5月11日現在、草加市において本計画の「特定開発事業構想届出書」は受理されておりません。
-                </div>
+        <p style="font-size: 0.9rem; color: #444;">現地状況および行政への照会結果は以下の通りです。</p>
+        <div class="status-box">
+            <div class="status-item">
+                <span class="status-label">標識（看板）の撤去</span>
+                5月11日、設置されていた全3箇所の標識が撤去されました。撤去後の現地において、中止や延期を知らせる周知文等の掲示は行われていません。
+            </div>
+            <div class="status-item">
+                <span class="status-label">住民説明会（5/13予定分）</span>
+                実施されません。市条例に基づく必須手続が未完了であり、標識の撤去により公式な案内も消滅しています。
+            </div>
+            <div class="status-item">
+                <span class="status-label">行政の対応</span>
+                不適切な標識掲示および周知不徹底に対し、市より事業者へ是正指示が行われたことが確認されています。
+            </div>
+            <div class="status-item">
+                <span class="status-label">手続の受理状況</span>
+                5月11日現在、草加市において本計画の「特定開発事業構想届出書」は受理されておりません。
             </div>
         </div>
     </section>
 
-    <!-- 公式確認セクション -->
+    <!-- 公的情報の確認（リンク埋め込み・スタイル継承） -->
     <section>
         <h3 class="section-title">■公的情報の確認</h3>
-        <div class="status-details" style="background-color: #fff; border: 1px dashed #ced4da;">
-            <p style="font-size: 0.85rem; margin-bottom: 10px;">情報の正確性については、以下の公的窓口にて確認が可能です。</p>
-            <div class="detail-item">
-                <span class="detail-label">特定開発事業の進行状況（草加市公式HP）</span>
+        <p style="font-size: 0.85rem; margin-bottom: 10px; color: #444;">情報の正確性については、以下の公的窓口にて確認が可能です。</p>
+        <div class="status-box" style="background-color: #fff; border: 1px dashed #ced4da;">
+            <div class="status-item">
+                <span class="status-label">特定開発事業の進行状況（草加市公式HP）</span>
                 <a href="https://www.city.soka.saitama.jp/cont/s1803/010/010/010/index.html" target="_blank" class="text-link">進行状況公開ページはこちら</a>
                 <p style="font-size: 0.75rem; color: #666; margin-top: 3px;">※受理からHP反映まで数日のタイムラグが生じる場合があります。</p>
             </div>
-            <div class="detail-item">
-                <span class="detail-label">手続に関する確認先</span>
+            <div class="status-item">
+                <span class="status-label">手続に関する確認先</span>
                 <a href="https://www.city.soka.saitama.jp/soshiki/kaihatsushinsa/index.html" target="_blank" class="text-link">草加市 都市整備部 開発審査課</a><br>
                 電話：<a href="tel:0489221927" class="text-link">048-922-1927</a>（直通）
             </div>
@@ -253,24 +251,24 @@
         </ul>
     </section>
 
-    <!-- 標識の設置状況：サムネスタイルを継承 -->
+    <!-- 標識の設置状況：小さな正方形サムネスタイルを継承 -->
     <section id="signage">
         <h3 class="section-title">■標識の設置状況</h3>
         <p style="font-size: 0.85rem; color: #444;">5月11日、全標識の取り外しを確認。現在、現地に案内等は存在しません。</p>
         <div class="image-grid">
             <!-- 撤去後の現状 -->
-            <div class="image-card full-width-card" onclick="openModal('infoboard-removed.webp')">
+            <div class="image-card featured-card" onclick="openModal('infoboard-removed.webp')">
                 <img src="infoboard-removed.webp" alt="標識撤去後の現状">
                 <div class="image-label">撤去後の現状（2026年5月11日撮影）</div>
             </div>
-            <!-- アーカイブ：以前の看板 -->
+            <!-- アーカイブサムネイル -->
             <div class="image-card" onclick="openModal('infoboard.webp')">
                 <img src="infoboard.webp" alt="標識の全景">
                 <div class="image-label">（アーカイブ）標識の全景</div>
             </div>
             <div class="image-card" onclick="openModal('infoboard-status.webp')">
                 <img src="infoboard-status.webp" alt="標識の記載内容">
-                <div class="image-label">（アーカイブ）標識の記載内容</div>
+                <div class="image-label">（アーカイブ）詳細内容</div>
             </div>
             <div class="image-card" onclick="openModal('infoboard-context-a.webp')">
                 <img src="infoboard-context-a.webp" alt="周辺状況A">
@@ -317,13 +315,13 @@
         </table>
     </section>
 
-    <!-- 免責事項（改変なし） -->
+    <!-- フッター・免責事項（改変なし） -->
     <footer>
         <div style="margin-bottom: 20px; line-height: 1.6;">
             <strong>免責事項</strong><br>
             本サイトに掲載されている情報は、現地標識および公的機関の公開情報に基づき個人的に整理したものであり、その正確性、完全性、最新性を保証するものではありません。情報の利用により生じた損害等について、作成者は一切の責任を負いません。最新の正確な情報については、必ず事業者または草加市役所等の公的窓口へ直接ご確認ください。
         </div>
-        <p>&copy; 2026 栄町一丁目開発計画に関する情報有志</p>
+        <p style="text-align: center;">&copy; 2026 栄町一丁目開発計画に関する情報有志</p>
     </footer>
 
     <!-- 画像拡大用モーダル -->
