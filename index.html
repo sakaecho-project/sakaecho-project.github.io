@@ -1,439 +1,357 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>草加市栄町一丁目 開発計画についてのお知らせ</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap');
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            background-color: #fcfcfc;
-            color: #334155;
-            font-size: 16px;
-            line-height: 1.8;
-            -webkit-text-size-adjust: 100%;
-            font-style: normal;
-        }
-        /* モーダル表示時に背面スクロールを禁止 */
-        body.modal-open {
-            overflow: hidden;
-        }
-        .section-title {
-            border-left: 2px solid #64748b;
-            padding-left: 1rem;
-            margin-bottom: 1.5rem;
-            font-weight: normal;
-            font-size: 1.25rem;
-            color: #1e293b;
-        }
-        .page { display: none; }
-        .page-active { display: block; }
-        @media print {
-            .no-print { display: none; }
-            body { background-color: white; }
-            .page { display: block !important; }
-        }
-        button, a {
-            min-height: 44px;
-            display: inline-flex;
-            align-items: center;
-            touch-action: manipulation;
-        }
-        /* 一般的なリンク形式（青字・下線） */
-        .standard-link {
-            color: #2563eb !important;
-            text-decoration: underline !important;
-            text-underline-offset: 3px;
-        }
-        .standard-link:hover {
-            color: #1d4ed8 !important;
-        }
-        /* リンクであることを隠す設定（テキストと同化） */
-        .hidden-link {
-            color: inherit !important;
-            text-decoration: none !important;
-            cursor: text;
-        }
-        /* 全体からイタリックを排除 */
-        i, em, .italic, address, cite {
-            font-style: normal !important;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>草加市栄町一丁目 開発計画（旧福野段ボール跡地）の記録</title>
+  <style>
+    /* --------------------------------------------------
+       栄町1丁目 開発計画まとめ
+       更新日: 2026/05/11
+    -------------------------------------------------- */
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      font-size: 18px;
+      line-height: 1.75;
+      color: #333;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 24px 15px;
+      background-color: #f0f2f5;
+    }
 
-        /* サムネイル設定：スマホ閲覧を考慮し横4枚を維持 */
-        .thumb-container {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(60px, 80px));
-            gap: 8px;
-            margin-top: 1.5rem;
-        }
-        .thumb-item {
-            aspect-ratio: 1 / 1;
-            overflow: hidden;
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            cursor: pointer;
-            border-radius: 2px;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .thumb-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: contrast(0.9) brightness(1.05);
-            transition: opacity 0.2s;
-        }
-        .thumb-item:active img {
-            opacity: 0.6;
-        }
+    header {
+      margin-bottom: 25px;
+      padding-left: 4px;
+    }
 
-        /* モーダル設定：事務資料的な白背景 */
-        #image-modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(255, 255, 255, 0.98);
-            z-index: 100;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-        }
-        #modal-img {
-            max-width: 100%;
-            max-height: 80vh;
-            object-fit: contain;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-            border: 1px solid #e2e8f0;
-        }
-    </style>
+    h1 {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #1a1a1a;
+      margin: 0;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #000;
+    }
+
+    section {
+      background: #ffffff;
+      margin-bottom: 25px;
+      padding: 25px;
+      border-radius: 6px;
+      border: 1px solid #d1d5db;
+    }
+
+    .sec-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 18px;
+      padding-left: 12px;
+      border-left: 6px solid #1a1a1a;
+    }
+
+    .st-item {
+      margin-bottom: 22px;
+    }
+
+    .st-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .st-head {
+      display: block;
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 5px;
+    }
+
+    .img-box {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .thumb {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .thumb img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .thumb-main {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .thumb-cap {
+      background: #f7f7f7;
+      color: #666;
+      font-size: 11px;
+      padding: 4px 2px;
+      text-align: center;
+      border-top: 1px solid #eee;
+    }
+
+    .thumb-main .thumb-cap {
+      color: #222;
+      font-size: 13.5px;
+      font-weight: bold;
+      padding: 7px;
+    }
+
+    .bullet-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: #444;
+    }
+
+    .bullet-list li {
+      margin-bottom: 10px;
+    }
+
+    .data-tbl {
+      width: 100%;
+      margin-top: 15px;
+      border-collapse: collapse;
+      font-size: 17px;
+    }
+
+    .data-tbl th, .data-tbl td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .data-tbl th {
+      width: 35%;
+      background: #f9f9f9;
+      color: #555;
+      font-weight: normal;
+    }
+
+    .a-link {
+      color: #004a99;
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding-bottom: 40px;
+      font-size: 15px;
+      color: #555;
+    }
+
+    .disclaimer-area {
+      background: #e2e8f0;
+      margin-bottom: 25px;
+      padding: 20px;
+      border-radius: 5px;
+      line-height: 1.7;
+    }
+
+    .sign {
+      text-align: right;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      z-index: 9999;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      align-items: center;
+      justify-content: center;
+    }
+
+    #overlay img {
+      max-width: 98%;
+      max-height: 98%;
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; padding-top: 15px; }
+      section { padding: 18px; }
+      .data-tbl th { width: 40%; }
+    }
+  </style>
 </head>
-<body class="antialiased text-slate-700 font-normal">
+<body>
 
-    <!-- Header -->
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
-            <h1 class="text-base md:text-lg font-normal text-slate-700 tracking-tight cursor-pointer" onclick="showPage('main')">草加市栄町一丁目 開発計画（旧福野段ボール跡地）の記録</h1>
-            <div class="no-print">
-                <a href="sakaecho-project-notice.pdf" download="sakaecho-project-notice.pdf" class="text-sm bg-slate-600 hover:bg-slate-700 text-white px-4 py-2 rounded transition font-normal h-10 no-underline inline-flex items-center justify-center shadow-sm">
-                    PDF版を保存
-                </a>
-            </div>
-        </div>
-    </header>
+  <header>
+    <h1>草加市栄町一丁目 開発計画（旧福野段ボール跡地）の記録</h1>
+  </header>
 
-    <!-- Main Content Page -->
-    <div id="page-main" class="page page-active">
-        <main class="max-w-4xl mx-auto px-4 py-8 md:py-12">
-            
-            <!-- Summary Section -->
-            <section class="bg-white border border-slate-200 rounded-lg p-6 md:p-10 mb-10 shadow-sm font-normal">
-                <h2 class="text-lg md:text-xl font-normal mb-6 text-slate-800 leading-snug">
-                    近隣で公開された開発計画の情報を共有しています
-                </h2>
-                <div class="text-slate-600 mb-8 text-sm md:text-base leading-relaxed space-y-4 font-normal">
-                    <p>
-                        草加市栄町一丁目の<a href="https://maps.app.goo.gl/iqr8RdTgTx3QLDeJ8" target="_blank" rel="noopener noreferrer" class="standard-link">旧福野段ボール工業跡地</a>において開発計画の標識が設置されました。
-                    </p>
-                    <p class="bg-slate-50 p-5 rounded border-l-4 border-slate-200 text-slate-600">
-                        本サイトは、現地標識や公開資料の内容を周辺住民が各自で確認しやすいよう、有志によって個人的に作成された資料置き場です。事業者や行政による公式サイトではありません。<br>
-                        住民説明会に際し、客観的な情報資料としてご参照ください。
-                    </p>
-                </div>
-
-                <h3 class="section-title">■計画概要の整理</h3>
-                <div class="grid md:grid-cols-2 gap-4 mb-10 font-normal text-slate-700">
-                    <div class="bg-slate-50 p-5 rounded-md border border-slate-100 flex items-center text-base">
-                        事務所用途とされる建築計画
-                    </div>
-                    <div class="bg-slate-50 p-5 rounded-md border border-slate-100 flex items-center text-base">
-                        地上4階建て・高さ40.90m
-                    </div>
-                    <div class="bg-slate-50 p-5 rounded-md border border-slate-100 flex items-center col-span-full text-base justify-center">
-                        予定工期：約33ヶ月（2026年12月〜2029年8月）
-                    </div>
-                </div>
-
-                <h3 class="section-title">■工事期間中に想定される一般的項目</h3>
-                <ul class="list-none pl-1 space-y-3 text-base text-slate-600 mb-8 font-normal">
-                    <li>・ 工事車両の通行および交通状況への影響</li>
-                    <li>・ 音響、振動等の発生</li>
-                    <li>・ 粉じん等への対策状況</li>
-                </ul>
-                <div class="text-[13px] text-slate-400 bg-slate-50 p-4 rounded border-l-2 border-slate-200 font-normal">
-                    ※具体的な対策内容は実施計画により異なります。
-                </div>
-            </section>
-
-            <!-- Briefing Section -->
-            <section class="bg-slate-700 text-white rounded-2xl p-8 md:p-12 mb-10 shadow-lg border-b-4 border-slate-800 font-normal">
-                <h2 class="text-xl md:text-2xl font-normal mb-8 text-center text-slate-100 tracking-widest font-normal">■住民説明会について</h2>
-                <div class="text-base text-slate-300 mb-10 text-center leading-relaxed max-w-2xl mx-auto space-y-4 font-normal">
-                    <p>本計画に関する説明および質疑応答が予定されています。</p>
-                    <p>現時点では公開情報に限りがあるため、計画の具体的な内容や詳細については、説明会にて補足説明が行われる予定です。</p>
-                </div>
-                
-                <div class="max-w-md mx-auto space-y-6 mb-10 font-normal">
-                    <div class="flex items-center border-b border-slate-600 pb-4">
-                        <span class="w-24 font-normal text-slate-400 text-xs tracking-wider">日時</span>
-                        <span class="text-xl font-normal">2026年5月13日（水）19:00〜</span>
-                    </div>
-                    <div class="flex items-start border-b border-slate-600 pb-4">
-                        <span class="w-24 font-normal text-slate-400 text-xs tracking-wider mt-1">会場</span>
-                        <div>
-                            <div class="text-xl font-normal text-white tracking-wide">草加市文化会館 3階 第1会議室</div>
-                            <div class="text-sm text-slate-400 mt-2 font-normal">
-                                <a href="https://www.google.com/maps/search/?api=1&query=%E8%8D%89%E5%8A%A0%E5%B8%82%E6%96%87%E5%8C%96%E4%BC%9A%E9%A4%A8+%E5%9F%BC%E7%8E%89%E7%9C%8C%E8%8D%89%E5%8A%A0%E5%B8%82%E6%9D%BE%E6%B1%9F1-1-5" target="_blank" rel="noopener noreferrer" class="standard-link text-white">
-                                    埼玉県草加市松江1-1-5
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center no-print">
-                    <button onclick="showPage('questions')" class="text-sm text-slate-400 underline hover:text-slate-200 transition font-normal h-10">
-                        （参考）説明会における一般的な確認事項の例示
-                    </button>
-                </div>
-            </section>
-
-            <!-- Archive Section -->
-            <section class="bg-white border border-slate-200 rounded-lg p-6 md:p-10 shadow-sm font-normal">
-                <h2 class="text-lg font-normal mb-8 text-slate-800 flex items-center font-normal border-b border-slate-100 pb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    公開情報の整理（2026年5月時点）
-                </h2>
-                
-                <div class="space-y-12 font-normal">
-                    <div>
-                        <h3 class="font-normal text-slate-800 mb-5 flex items-center text-base font-normal">
-                            <span class="w-1.5 h-4 bg-slate-300 mr-3"></span>
-                            ■計画の主な数値
-                        </h3>
-                        <div class="grid md:grid-cols-1 gap-y-1 text-base ml-4 font-normal">
-                            <div class="flex justify-between border-b border-slate-100 py-3 font-normal text-slate-700">
-                                <span class="text-slate-400 text-sm">対象地</span>
-                                <span class="text-slate-600 font-normal text-right">旧福野段ボール工業跡地（草加市栄町一丁目）</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-100 py-3 font-normal text-slate-700">
-                                <span class="text-slate-400 text-sm">建築主（事業者）</span>
-                                <span class="text-slate-600 font-normal text-right">シンペキ特定目的会社</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-100 py-3 font-normal text-slate-700">
-                                <span class="text-slate-400 text-sm">設計者（連絡先）</span>
-                                <span class="text-slate-600 font-normal text-right">株式会社ユーエスアイ エンジニアリング</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-100 py-3 font-normal text-slate-700">
-                                <span class="text-slate-400 text-sm">開発区域の面積</span>
-                                <span class="text-slate-300 text-sm font-normal text-right">（標識上 未記載）</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-100 py-3 font-normal text-slate-700">
-                                <span class="text-slate-400 text-sm">工事予定期間</span>
-                                <span class="text-slate-600 font-normal text-right">2026年12月～2029年8月</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-100 py-3 font-normal text-slate-700">
-                                <span class="text-slate-400 text-sm">用途</span>
-                                <span class="text-slate-600 font-normal text-right">事務所（計画上）</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-100 py-3 font-normal text-slate-700">
-                                <span class="text-slate-400 text-sm">建物構造</span>
-                                <span class="text-slate-600 font-normal text-right">1棟　地上4階建て</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-100 py-3 font-normal text-slate-700">
-                                <span class="text-slate-400 text-sm">高さ</span>
-                                <span class="text-slate-600 font-normal text-right">40.90m</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-100 py-3 font-normal text-slate-700">
-                                <span class="text-slate-400 text-sm">階高構成</span>
-                                <span class="text-slate-600 font-normal text-right">約10m/層（高さと階数からの参考値）</span>
-                            </div>
-                        </div>
-                        <div class="text-[13px] text-slate-400 mt-5 ml-4 leading-relaxed font-normal">
-                            ※構造の詳細については、公開標識の範囲で確認可能な内容に限られています。
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="font-normal text-slate-800 mb-5 flex items-center text-base font-normal">
-                            <span class="w-1.5 h-4 bg-slate-300 mr-3"></span>
-                            ■標識の設置状況
-                        </h3>
-                        <ul class="list-none pl-4 space-y-3 text-base text-slate-500 font-normal">
-                            <li>・ 設置場所：<a href="https://maps.app.goo.gl/YJuU85DWv79869xK7" target="_blank" rel="noopener noreferrer" class="standard-link">栄第4公園</a>付近</li>
-                            <li>・ 記載事項：開発面積等の項目において未記載の状態となっています（現地標識による）</li>
-                        </ul>
-                        <!-- 画像サムネイルセクション -->
-                        <div class="thumb-container ml-4">
-                            <div class="thumb-item" onclick="openModal('infoboard.webp')">
-                                <img src="infoboard.webp" alt="1">
-                            </div>
-                            <div class="thumb-item" onclick="openModal('infoboard-status.webp')">
-                                <img src="infoboard-status.webp" alt="2">
-                            </div>
-                            <div class="thumb-item" onclick="openModal('infoboard-context-a.webp')">
-                                <img src="infoboard-context-a.webp" alt="3">
-                            </div>
-                            <div class="thumb-item" onclick="openModal('infoboard-context-b.webp')">
-                                <img src="infoboard-context-b.webp" alt="4">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-slate-50 p-6 md:p-8 rounded-lg border border-slate-100 shadow-inner font-normal text-slate-600">
-                        <h3 class="font-normal text-slate-800 mb-5 text-base font-normal">■一般的な確認項目（参考）</h3>
-                        <p class="text-sm text-slate-400 mb-6 leading-relaxed font-normal">
-                            大規模開発等の計画公開において、一般的に確認対象となる項目を例示しています。
-                        </p>
-                        <div class="grid md:grid-cols-1 gap-y-3 text-sm ml-2 font-normal">
-                            <div>・ 開発許可および事前協議の実施状況</div>
-                            <div>・ 土壌調査、地盤調査の実施状況とその結果</div>
-                            <div>・ 周辺環境（日照、電波、音響等）への影響評価</div>
-                            <div>・ 都市計画および用途地域との適合</div>
-                            <div>・ 関連条例および要領への適合状況</div>
-                        </div>
-                        <p class="text-[13px] text-slate-400 mt-8 border-t border-slate-200 pt-4 leading-relaxed font-normal">
-                            ※行政窓口（<a href="https://www.city.soka.saitama.jp/mailform/otoiawase/SITE000000000000000048.html" target="_blank" rel="noopener noreferrer" class="hidden-link">草加市 開発審査課</a>：<a href="tel:048-922-1904" class="standard-link">048-922-1904</a>）での確認が可能です。※本件の適否を示すものではありません。
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Footer -->
-            <footer class="mt-16 text-center text-slate-400 pb-20 font-normal">
-                <div class="max-w-3xl mx-auto mb-8 px-8 py-8 bg-slate-50 border border-slate-200 rounded text-sm text-slate-500 leading-relaxed text-left font-normal">
-                    <p class="font-medium mb-4 text-slate-700 text-base font-normal border-b border-slate-200 pb-2">免責事項（必ずお読みください）</p>
-                    <ul class="list-disc pl-5 space-y-3 font-normal">
-                        <li>本資料は、現地看板や公的資料等の公開情報をもとに整理した参考資料であり、特定の対応や判断を勧誘・強制するものではございません。判断は各個人の責任において行ってください。</li>
-                        <li>掲載内容は2026年5月時点の状況に基づいています。最新の状況と異なる場合があるため、正確な情報は必ず行政窓口および現地標識にてご確認ください。</li>
-                        <li>本サイトからリンクしている外部サイトの内容および利用により生じた損害等について、本サイトの作成者は一切の責任を負いません。</li>
-                        <li>本サイトの情報の利用によって生じた不利益、損害、トラブル等について、作成者は一切の責任を負いかねますので、あらかじめご了承ください。</li>
-                    </ul>
-                </div>
-                <div class="text-slate-500 text-sm tracking-widest font-normal">2026年5月 周辺住民有志</div>
-            </footer>
-        </main>
+  <section>
+    <div>
+      <p>草加市栄町一丁目の<a href="https://www.google.com/maps/search/?api=1&query=埼玉県草加市栄町1丁目+旧福野段ボール工業" target="_blank" class="a-link">旧福野段ボール工業跡地</a>において開発計画の標識が設置されました。</p>
+      <p>本サイトは、現地標識や公開資料の内容を周辺住民が各自で確認しやすいよう、有志によって個人的に作成された資料置き場です。事業者や行政による公式サイトではありません。<br>住民説明会に際し、客観的な情報資料としてご参照ください。</p>
     </div>
+  </section>
 
-    <!-- Questions Page -->
-    <div id="page-questions" class="page">
-        <main class="max-w-4xl mx-auto px-4 py-12">
-            <button onclick="showPage('main')" class="mb-8 flex items-center text-slate-500 hover:text-slate-800 transition font-normal h-10 border border-transparent">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                <span>一覧へ戻る</span>
-            </button>
-
-            <section class="bg-white border border-slate-200 rounded-lg p-8 md:p-12 shadow-sm font-normal">
-                <h2 class="text-2xl font-normal mb-10 border-b pb-6 text-slate-800">住民説明会における一般的確認事項の例示</h2>
-                <p class="text-sm text-slate-500 mb-10 leading-relaxed font-normal">
-                    本項目は、開発事業において周辺環境の把握のために一般的に確認対象となる事項を整理したものです。<br>
-                    行政窓口等で案内される一般的な手続きの経緯や、生活道路および子供の安全確保に関する例示です。
-                </p>
-
-                <div class="space-y-16 font-normal text-slate-600">
-                    <div>
-                        <h3 class="text-lg mb-6 text-slate-800 border-l-4 border-slate-300 pl-4 font-normal">1. 予定建築物の構造および仕様について</h3>
-                        <div class="bg-slate-50 p-6 rounded-lg space-y-6 text-base font-normal">
-                            <p>● 階高の設定理由について<br>
-                                地上4階建てで高さが約41m（1層あたり平均10m）という設計において、この階高を必要とする構造上の特徴や設備計画について。</p>
-                            <p>● 各フロアの設備について<br>
-                                各フロアの天井高や、設置が想定される主要な設備（空調、電源設備等）の種類、および周辺環境（音響、振動、排熱等）への配慮方法について。</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg mb-6 text-slate-800 border-l-4 border-slate-300 pl-4 font-normal">2. 手続きおよび行政との情報共有について</h3>
-                        <div class="bg-slate-50 p-6 rounded-lg space-y-6 text-base font-normal">
-                            <p>● 行政窓口での手続きの進捗について<br>
-                                市の窓口（開発審査課等）での事前のやり取りにおいて、周辺環境への影響対策としてどのような点に留意して計画が進められているか。</p>
-                            <p>● 行政への報告について<br>
-                                本日の説明会で出された意見や懸念事項が、どのような形で取りまとめられ、今後行政（市や県）へ報告・共有される予定か。</p>
-                            <p>● 窓口の設置について<br>
-                                工事中および稼働後における、近隣住民との円滑なコミュニケーションを維持するための窓口体制について。</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg mb-6 text-slate-800 border-l-4 border-slate-300 pl-4 font-normal">3. 地盤、土壌および施工計画について</h3>
-                        <div class="bg-slate-50 p-6 rounded-lg space-y-6 text-base font-normal">
-                            <p>● 地盤調査および基礎工事について<br>
-                                本敷地におけるボーリング調査等の結果と、それに基づき採用される基礎工法、および施工中の周辺地盤や既存建築物への物理的な影響管理体制について。</p>
-                            <p>● 土壌調査の実施状況について<br>
-                                工場跡地における各種調査の実施状況と、環境および近隣への安全確保策の内容について。</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg mb-6 text-slate-800 border-l-4 border-slate-400 pl-4 font-normal tracking-wide">4. 生活環境の安全および子供の安全確保について</h3>
-                        <div class="bg-slate-50 p-6 rounded-lg space-y-6 text-base font-normal text-slate-700">
-                            <p>● 通学路および生活道路の安全確保について<br>
-                                工事車両の通行ルート選定において、登下校時間帯への具体的な配慮や、ガードマンの配置、死角となる箇所の安全確認など、子供や歩行者の安全を確保するための体制について。</p>
-                            <p>● 工事車両の搬入・搬出時間について<br>
-                                通学路の安全を考慮し、登下校の時間帯を避けた車両の出入りが計画されているか。また、早朝や夜間の作業・搬入の有無とその制限状況について。</p>
-                            <p>● 生活道路の環境維持について<br>
-                                工事用車両や完成後の車両が生活道路に流入することによる、歩行環境への影響回避策. また、工事用の仮囲い等によって道路の視認性が悪化しないための対策について。</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg mb-6 text-slate-800 border-l-4 border-slate-300 pl-4 font-normal">5. 工期および住環境への配慮について</h3>
-                        <div class="bg-slate-50 p-6 rounded-lg space-y-6 text-base font-normal">
-                            <p>● 工期の設定根拠について<br>
-                                建築規模に対し、約33ヶ月という長期間の工期が予定されている工程上の背景、および周辺への長期的な負荷軽減策について。</p>
-                            <p>● 生活環境（日照・通信等）への調査について<br>
-                                高さ41mの建築物による日照、電波状況、風の流れなど、近隣の住宅環境に与える影響予測の調査結果、およびその公開状況について。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-16 pt-8 border-t border-slate-100 font-normal text-center">
-                    <p class="text-sm text-slate-400 font-normal">
-                        ※上記は一般的な確認事項を例示したものであり、特定の主張を代弁するものではありません。
-                    </p>
-                </div>
-            </section>
-        </main>
+  <section>
+    <h3 class="sec-title">■現況（2026年5月11日時点）</h3>
+    <p style="font-size: 16px; color: #666; margin-bottom: 15px;">現地状況および行政への照会結果は以下の通りです。</p>
+    <div class="st-item">
+      <span class="st-head">標識（看板）の撤去</span>
+      5月11日、設置されていた全3箇所の標識が<a href="#signage" class="a-link">撤去</a>されました。撤去後の現地において、中止や延期を知らせる周知文等の掲示は行われていません。
     </div>
-
-    <!-- Modal for Evidence View -->
-    <div id="image-modal" onclick="closeModal()">
-        <img id="modal-img" src="" alt="">
-        <p class="text-[10px] text-slate-400 mt-6 tracking-[0.2em] font-normal no-print">CLOSE</p>
+    <div class="st-item">
+      <span class="st-head">住民説明会（5/13予定分）</span>
+      実施されません。市条例に基づく必須手続が未完了であり、標識の撤去により公式な案内も消滅しています。
     </div>
+    <div class="st-item">
+      <span class="st-head">行政の対応</span>
+      不適切な標識掲示および周知不徹底に対し、市より事業者へ是正指示が行われたことが確認されています。
+    </div>
+    <div class="st-item">
+      <span class="st-head">手続の受理状況</span>
+      5月11日現在、草加市において本計画の「特定開発事業構想届出書」は受理されておりません。
+    </div>
+  </section>
 
-    <script>
-        function showPage(pageId) {
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('page-active');
-            });
-            const targetPage = document.getElementById('page-' + pageId);
-            if (targetPage) {
-                targetPage.classList.add('page-active');
-            }
-            window.scrollTo(0, 0);
-        }
+  <section>
+    <h3 class="sec-title">■公的情報の確認</h3>
+    <p style="font-size: 16px; color: #666; margin-bottom: 12px;">情報の正確性については、以下の公的窓口にて確認が可能です。</p>
+    <div class="st-item">
+      <span class="st-head">特定開発事業の進行状況（草加市公式HP）</span>
+      <a href="https://www.city.soka.saitama.jp/cont/s1803/010/010/010/index.html" target="_blank" class="a-link">進行状況公開ページはこちら</a>
+      <p style="font-size: 13.5px; color: #888; margin-top: 3px;">※受理からHP反映まで数日のタイムラグが生じる場合があります。</p>
+    </div>
+    <div class="st-item">
+      <span class="st-head">手続に関する確認先</span>
+      <a href="https://www.city.soka.saitama.jp/mailform/otoiawase/SITE000000000000000048.html" target="_blank" class="a-link">草加市 開発審査課（お問い合わせフォーム）</a><br>
+      電話：<a href="tel:0489221927" class="a-link">048-922-1927</a>（直通）
+    </div>
+  </section>
 
-        function openModal(src) {
-            const modal = document.getElementById('image-modal');
-            const img = document.getElementById('modal-img');
-            img.src = src;
-            modal.style.display = 'flex';
-            document.body.classList.add('modal-open');
-        }
+  <section>
+    <h3 class="sec-title">■一般的な確認項目</h3>
+    <p style="color: #444; margin-bottom: 12px;">
+      大規模な開発事業においては、行政手続や周辺環境への配慮として、一般的に以下の項目が住民説明や審査の対象となります。
+    </p>
+    <ul class="bullet-list">
+      <li>開発許可および事前協議の実施状況</li>
+      <li>土壌調査、地盤調査の実施状況とその結果</li>
+      <li>周辺環境（日照、電波、音響等）への影響評価</li>
+      <li>都市計画および用途地域との適合</li>
+      <li>関連条例および要領への適合状況</li>
+    </ul>
+  </section>
 
-        function closeModal() {
-            document.getElementById('image-modal').style.display = 'none';
-            document.body.classList.remove('modal-open');
-        }
+  <section id="signage">
+    <h3 class="sec-title">■標識の設置状況</h3>
+    <p style="color: #444; margin-bottom: 12px;">現在、現地に案内等は存在しません。</p>
+    <div class="img-box">
+      <div class="thumb thumb-main" onclick="openPic('infoboard-removed.webp')">
+        <img src="infoboard-removed.webp" alt="標識撤去後の現状">
+        <div class="thumb-cap">現在：撤去後の状況（2026/05/11撮影）</div>
+      </div>
+      <div class="thumb" onclick="openPic('infoboard.webp')">
+        <img src="infoboard.webp" alt="標識の記載内容">
+        <div class="thumb-cap">過去：記載内容</div>
+      </div>
+      <div class="thumb" onclick="openPic('infoboard-status.webp')">
+        <img src="infoboard-status.webp" alt="標識の全景">
+        <div class="thumb-cap">過去：全景</div>
+      </div>
+      <div class="thumb" onclick="openPic('infoboard-context-a.webp')">
+        <img src="infoboard-context-a.webp" alt="周辺状況A">
+        <div class="thumb-cap">過去：周辺A</div>
+      </div>
+      <div class="thumb" onclick="openPic('infoboard-context-b.webp')">
+        <img src="infoboard-context-b.webp" alt="周辺状況B">
+        <div class="thumb-cap">過去：周辺B</div>
+      </div>
+    </div>
+  </section>
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
-        });
-    </script>
+  <section>
+    <h3 class="sec-title">■（アーカイブ）撤去前の記載内容</h3>
+    <p style="font-size: 15px; color: #888; margin-bottom: 12px;">
+      5月10日まで現地に掲示されていた標識に基づくデータです。事実の記録保存のため掲載します。
+    </p>
+    <table class="data-tbl">
+      <tr>
+        <th>建築主</th>
+        <td>シンペキ特定目的会社</td>
+      </tr>
+      <tr>
+        <th>設計者</th>
+        <td>株式会社ユーエスアイ エンジニアリング</td>
+      </tr>
+      <tr>
+        <th>用途 / 階数</th>
+        <td>事務所 / 地上4階</td>
+      </tr>
+      <tr>
+        <th>高さ</th>
+        <td>40.90m （1層平均 約10.2m）</td>
+      </tr>
+      <tr>
+        <th>予定工期</th>
+        <td>2026年12月 〜 2029年8月</td>
+      </tr>
+      <tr>
+        <th>説明会（当初予定）</th>
+        <td>2026年5月13日(水) 19:00〜<br>（草加市文化会館 3階 第1会議室）</td>
+      </tr>
+    </table>
+  </section>
+
+  <footer>
+    <div class="disclaimer-area">
+      <strong>免責事項および運営方針</strong><br>
+      本サイトは「草加市栄町一丁目 開発計画（旧福野段ボール跡地）」を巡る事実経過を記録・共有することを目的とした、周辺住民有志による非営利のアーカイブサイトです。草加市役所および関係事業者（建築主・設計者等）とは一切の資本・協力関係にありません。
+      <br><br>
+      掲載情報は、条例に基づく現地標識および公的機関の公開資料を元に、地域住民の公共の利害に資する情報の個人的な整理・記録を行っているものです。本サイトは情報の正確性、完全性、最新性について公的に保証するものではなく、手続の進捗に伴い状況は随時変動する可能性があります。
+      <br><br>
+      利用者が本サイトの情報に基づいて行った一切の判断および行動によって生じた損害等について、作成者は法的に許容される範囲において一切の責任を負いません。最終的かつ正確な情報については、必ず草加市役所等の公的窓口へ直接ご確認ください。
+      <br><br>
+      なお、掲載内容に関する客観的事実に基づいた修正や、合理的な事情による削除等の要請については、公共性と公平性を考慮した上で、関係法令を遵守し誠実に対応を検討いたします。
+    </div>
+    <div class="sign">2026年5月 周辺住民有志</div>
+  </footer>
+
+  <div id="overlay" onclick="closePic()">
+    <img id="zoom-img" src="" alt="拡大画像">
+  </div>
+
+  <script>
+    // 拡大表示
+    function openPic(url) {
+      var overlay = document.getElementById('overlay');
+      var img = document.getElementById('zoom-img');
+      img.src = url;
+      overlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      // console.log('view:' + url); // Debug
+    }
+
+    // 閉じる
+    function closePic() {
+      document.getElementById('overlay').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    // Escキー対応
+    document.addEventListener('keydown', function(e) {
+      if (e.keyCode === 27) {
+        closePic();
+      }
+    });
+  </script>
+
 </body>
 </html>
